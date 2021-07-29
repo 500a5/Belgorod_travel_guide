@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/newsFragment"
+        android:icon="@drawable/ic_news"
+        android:title="@string/news" />
+    <item
+        android:id="@+id/entertainmentsFragment"
+        android:icon="@drawable/ic_entertainments"
+        android:title="@string/entertainments" />
+    <item
+        android:id="@+id/userProileFragment"
+        android:icon="@drawable/ic_user_profile"
+        android:title="@string/user" />
+    <item
+        android:id="@+id/shopSportFragment"
+        android:icon="@drawable/ic_shop"
+        android:title="@string/shop" />
+</menu>

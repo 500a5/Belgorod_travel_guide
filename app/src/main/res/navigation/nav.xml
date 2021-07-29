@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/newsFragment">
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.belgorodtravelguide.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/entertainmentsFragment"
+        android:name="com.example.belgorodtravelguide.EntertainmentsFragment"
+        android:label="fragment_entertainments"
+        tools:layout="@layout/fragment_entertainments" />
+    <fragment
+        android:id="@+id/userProileFragment"
+        android:name="com.example.belgorodtravelguide.UserProileFragment"
+        android:label="fragment_user_proile"
+        tools:layout="@layout/fragment_user_proile" />
+    <fragment
+        android:id="@+id/shopSportFragment"
+        android:name="com.example.belgorodtravelguide.ShopSportFragment"
+        android:label="fragment_shop_sport"
+        tools:layout="@layout/fragment_shop_sport" />
+</navigation>
