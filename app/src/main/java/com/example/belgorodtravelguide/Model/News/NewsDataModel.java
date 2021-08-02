@@ -1,4 +1,4 @@
-package com.example.belgorodtravelguide.Model;
+package com.example.belgorodtravelguide.Model.News;
 
 public class NewsDataModel {
     int image;

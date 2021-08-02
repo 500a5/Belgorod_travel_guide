@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.example.belgorodtravelguide.View.NewsFragment"
+        android:name="com.example.belgorodtravelguide.View.News.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" />
     <fragment
         android:id="@+id/entertainmentsFragment"
-        android:name="com.example.belgorodtravelguide.View.EntertainmentsFragment"
+        android:name="com.example.belgorodtravelguide.View.Entertainments.EntertainmentsFragment"
         android:label="fragment_entertainments"
         tools:layout="@layout/fragment_entertainments" />
     <fragment
         android:id="@+id/userProileFragment"
-        android:name="com.example.belgorodtravelguide.View.UserProileFragment"
+        android:name="com.example.belgorodtravelguide.View.UserProfile.UserProfileFragment"
         android:label="fragment_user_proile"
         tools:layout="@layout/fragment_user_proile" />
     <fragment
         android:id="@+id/shopSportFragment"
-        android:name="com.example.belgorodtravelguide.View.ShopSportFragment"
+        android:name="com.example.belgorodtravelguide.View.Shop.ShopSportFragment"
         android:label="fragment_shop_sport"
         tools:layout="@layout/fragment_shop_sport" />
 </navigation>

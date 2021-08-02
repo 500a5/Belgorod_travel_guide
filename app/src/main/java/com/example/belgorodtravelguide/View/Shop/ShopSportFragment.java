@@ -1,4 +1,4 @@
-package com.example.belgorodtravelguide.View;
+package com.example.belgorodtravelguide.View.Shop;
 
 import android.os.Bundle;
 

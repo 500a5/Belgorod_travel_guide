@@ -1,5 +1,6 @@
-package com.example.belgorodtravelguide.View;
+package com.example.belgorodtravelguide.View.News;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,8 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import com.example.belgorodtravelguide.Model.NewsAdapter;
-import com.example.belgorodtravelguide.Model.NewsDataModel;
+import com.example.belgorodtravelguide.Model.News.NewsAdapter;
+import com.example.belgorodtravelguide.Model.News.NewsDataModel;
 import com.example.belgorodtravelguide.R;
 
 import java.util.ArrayList;
@@ -61,8 +62,8 @@ public class NewsFragment extends Fragment {
 
         NewsDataModel ob7 = new NewsDataModel(R.drawable.q2, "head","Body  Body   Body   Body    Body     Body" );
         dataholder.add(ob7);
-
-        recyclerView.setAdapter(new NewsAdapter((dataholder)));
+        Context context=getActivity();
+        recyclerView.setAdapter(new NewsAdapter(dataholder, context));
 
         return view;
     }
