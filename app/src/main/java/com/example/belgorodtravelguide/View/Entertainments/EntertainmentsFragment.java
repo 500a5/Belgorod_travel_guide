@@ -94,7 +94,7 @@ public class EntertainmentsFragment extends Fragment {
         dataholder.add(ob3);
         EntertainmentsDataModel ob4 = new EntertainmentsDataModel(R.drawable.ic_baseline_park_24, "Парки");
         dataholder.add(ob4);
-        EntertainmentsDataModel ob5 = new EntertainmentsDataModel(R.drawable.ic_entertainments, "Музеи");
+        EntertainmentsDataModel ob5 = new EntertainmentsDataModel(R.drawable.ic_entertainments, "Театры");
         dataholder.add(ob5);
 
 
@@ -104,5 +104,6 @@ public class EntertainmentsFragment extends Fragment {
 
         return view;
     }
+
 
 }

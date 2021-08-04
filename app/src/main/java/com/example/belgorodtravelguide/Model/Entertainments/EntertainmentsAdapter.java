@@ -9,12 +9,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.belgorodtravelguide.CafeActivity;
 import com.example.belgorodtravelguide.R;
+import com.example.belgorodtravelguide.View.Entertainments.CafeActivity;
+import com.example.belgorodtravelguide.View.Entertainments.MoveActivity;
+import com.example.belgorodtravelguide.View.Entertainments.ParkActivity;
+import com.example.belgorodtravelguide.View.Entertainments.ShoppingCenterActivity;
+import com.example.belgorodtravelguide.View.Entertainments.TheaterActivity;
 
 import java.util.ArrayList;
 
@@ -43,6 +45,38 @@ public class EntertainmentsAdapter extends RecyclerView.Adapter<EntertainmentsAd
         holder.img.setImageResource(dataholder.get(position).getImage());
         holder.header.setText(dataholder.get(position).getHeader());
 
+       holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent;
+                switch (position){
+                    case 0:
+                        intent = new Intent(context, MoveActivity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 1:
+                        intent = new Intent(context, CafeActivity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(context, ShoppingCenterActivity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(context, ParkActivity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(context, TheaterActivity.class);
+                        context.startActivity(intent);
+                        break;
+
+                }
+
+            }
+
+        });
+
     }
 
 
@@ -59,16 +93,6 @@ public class EntertainmentsAdapter extends RecyclerView.Adapter<EntertainmentsAd
             img=itemView.findViewById(R.id.img1);
             header=itemView.findViewById(R.id.t1);
 
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(context, CafeActivity.class);
-                    context.startActivity(intent);
-
-                }
-
-            });
         }
     }
 
