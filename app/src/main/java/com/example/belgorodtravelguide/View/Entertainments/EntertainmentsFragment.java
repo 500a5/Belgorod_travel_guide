@@ -1,8 +1,11 @@
 package com.example.belgorodtravelguide.View.Entertainments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -11,6 +14,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.belgorodtravelguide.Model.Entertainments.EntertainmentsAdapter;
+import com.example.belgorodtravelguide.Model.Entertainments.EntertainmentsDataModel;
+import com.example.belgorodtravelguide.Model.News.NewsAdapter;
+import com.example.belgorodtravelguide.Model.News.NewsDataModel;
 import com.example.belgorodtravelguide.R;
 import com.example.belgorodtravelguide.Model.Entertainments.SlidePaderAdapter;
 
@@ -22,6 +29,8 @@ import java.util.TimerTask;
 
 public class EntertainmentsFragment extends Fragment {
 
+    RecyclerView recyclerView;
+    ArrayList<EntertainmentsDataModel> dataholder;
     private ViewPager pager;
     private PagerAdapter pagerAdapter;
 
@@ -69,6 +78,29 @@ public class EntertainmentsFragment extends Fragment {
                 handler.post(Update);
             }
         }, DELAY_MS, PERIOD_MS);
+
+
+
+        recyclerView = view.findViewById(R.id.rec);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        dataholder = new ArrayList<>();
+
+        EntertainmentsDataModel ob1 = new EntertainmentsDataModel(R.drawable.ic_baseline_local_movies_24, "Кинотеатры");
+        dataholder.add(ob1);
+        EntertainmentsDataModel ob2 = new EntertainmentsDataModel(R.drawable.ic_baseline_local_cafe_24, "Кафе");
+        dataholder.add(ob2);
+        EntertainmentsDataModel ob3 = new EntertainmentsDataModel(R.drawable.ic_baseline_shopping_bag_24, "Торговые центры");
+        dataholder.add(ob3);
+        EntertainmentsDataModel ob4 = new EntertainmentsDataModel(R.drawable.ic_baseline_park_24, "Парки");
+        dataholder.add(ob4);
+        EntertainmentsDataModel ob5 = new EntertainmentsDataModel(R.drawable.ic_entertainments, "Музеи");
+        dataholder.add(ob5);
+
+
+        Context context=getActivity();
+        recyclerView.setAdapter(new EntertainmentsAdapter(dataholder, context));
+
 
         return view;
     }

@@ -42,25 +42,25 @@ public class NewsFragment extends Fragment {
 
         dataholder = new ArrayList<>();
 
-        NewsDataModel ob1 = new NewsDataModel(R.drawable.q, "head","Body  Body   Body   Body    Body     Body" );
+        NewsDataModel ob1 = new NewsDataModel(R.drawable.photo_news_test1, "head","Body  Body   Body   Body    Body     Body" );
         dataholder.add(ob1);
 
-        NewsDataModel ob2 = new NewsDataModel(R.drawable.q2, "head","Body  Body   Body   Body    Body     Body" );
+        NewsDataModel ob2 = new NewsDataModel(R.drawable.photo_news_test2, "head","Body  Body   Body   Body    Body     Body" );
         dataholder.add(ob2);
 
-        NewsDataModel ob3 = new NewsDataModel(R.drawable.q, "head","Body  Body   Body   Body    Body     Body" );
+        NewsDataModel ob3 = new NewsDataModel(R.drawable.photo_news_test1, "head","Body  Body   Body   Body    Body     Body" );
         dataholder.add(ob3);
 
-        NewsDataModel ob4 = new NewsDataModel(R.drawable.q2, "head","Body  Body   Body   Body    Body     Body" );
+        NewsDataModel ob4 = new NewsDataModel(R.drawable.photo_news_test2, "head","Body  Body   Body   Body    Body     Body" );
         dataholder.add(ob4);
 
-        NewsDataModel ob5 = new NewsDataModel(R.drawable.q, "head","Body  Body   Body   Body    Body     Body" );
+        NewsDataModel ob5 = new NewsDataModel(R.drawable.photo_news_test1, "head","Body  Body   Body   Body    Body     Body" );
         dataholder.add(ob5);
 
-        NewsDataModel ob6=  new NewsDataModel(R.drawable.q, "head","Body  Body   Body   Body    Body     Body" );
+        NewsDataModel ob6=  new NewsDataModel(R.drawable.photo_news_test1, "head","Body  Body   Body   Body    Body     Body" );
         dataholder.add(ob6);
 
-        NewsDataModel ob7 = new NewsDataModel(R.drawable.q2, "head","Body  Body   Body   Body    Body     Body" );
+        NewsDataModel ob7 = new NewsDataModel(R.drawable.photo_news_test2, "head","Body  Body   Body   Body    Body     Body" );
         dataholder.add(ob7);
         Context context=getActivity();
         recyclerView.setAdapter(new NewsAdapter(dataholder, context));
