@@ -1,66 +1,90 @@
 package com.example.belgorodtravelguide.View.Shop;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.belgorodtravelguide.ViewModel.Shop.ShopAdapter;
+import com.example.belgorodtravelguide.Model.Shop.ShopDataModel;
 import com.example.belgorodtravelguide.R;
+import com.example.belgorodtravelguide.View.MainActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ShopSportFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+
 public class ShopSportFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    RecyclerView recyclerView;
+    ArrayList<ShopDataModel> dataholder;
+    TextView point;
+    Button summpoint;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ShopSportFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ShopSportFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ShopSportFragment newInstance(String param1, String param2) {
-        ShopSportFragment fragment = new ShopSportFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shop_sport, container, false);
+        View view =  inflater.inflate(R.layout.fragment_shop_sport, container, false);
+        point = view.findViewById(R.id.point);
+        point.setText(Integer.toString(MainActivity.getpoint()));
+
+
+        view.findViewById(R.id.summpoint).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.sumpoint();
+                point.setText(Integer.toString(MainActivity.getpoint()));
+                onResume();
+            }
+        });
+
+        recyclerView = view.findViewById(R.id.recyclerview);
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+
+        dataholder = new ArrayList<>();
+
+        ShopDataModel ob1 = new ShopDataModel(R.drawable.ball, 600,"Мяч" );
+        dataholder.add(ob1);
+
+        ShopDataModel ob2 = new ShopDataModel(R.drawable.skipping_rope, 300,"Скакалка" );
+        dataholder.add(ob2);
+
+        ShopDataModel ob3 = new ShopDataModel(R.drawable.dumbbells, 1500,"Гантель" );
+        dataholder.add(ob3);
+
+        ShopDataModel ob4 = new ShopDataModel(R.drawable.skipping_rope, 300,"Скакалка" );
+        dataholder.add(ob4);
+
+        ShopDataModel ob5 = new ShopDataModel(R.drawable.ball, 600,"Мяч" );
+        dataholder.add(ob5);
+
+        ShopDataModel ob6=  new ShopDataModel(R.drawable.dumbbells, 1500,"Гантель" );
+        dataholder.add(ob6);
+
+        ShopDataModel ob7 = new ShopDataModel(R.drawable.ball, 600,"Мяч" );
+        dataholder.add(ob7);
+        Context context=getActivity();
+        recyclerView.setAdapter(new ShopAdapter(dataholder, context));
+
+
+
+        return view;
     }
+
 }

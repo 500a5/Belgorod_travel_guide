@@ -1,4 +1,4 @@
-package com.example.belgorodtravelguide.Model.Entertainments;
+package com.example.belgorodtravelguide.ViewModel.Entertainments;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

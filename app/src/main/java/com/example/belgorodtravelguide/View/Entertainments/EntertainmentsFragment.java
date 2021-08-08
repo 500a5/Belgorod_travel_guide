@@ -14,12 +14,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.belgorodtravelguide.Model.Entertainments.EntertainmentsAdapter;
+import com.example.belgorodtravelguide.ViewModel.Entertainments.EntertainmentsAdapter;
 import com.example.belgorodtravelguide.Model.Entertainments.EntertainmentsDataModel;
-import com.example.belgorodtravelguide.Model.News.NewsAdapter;
-import com.example.belgorodtravelguide.Model.News.NewsDataModel;
 import com.example.belgorodtravelguide.R;
-import com.example.belgorodtravelguide.Model.Entertainments.SlidePaderAdapter;
+import com.example.belgorodtravelguide.ViewModel.Entertainments.SlidePaderAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

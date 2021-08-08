@@ -1,4 +1,4 @@
-package com.example.belgorodtravelguide.Model.Entertainments.Park;
+package com.example.belgorodtravelguide.ViewModel.Entertainments.ShopingCenter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,18 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.belgorodtravelguide.Model.Entertainments.Move.MoveDataModel;
+import com.example.belgorodtravelguide.Model.Entertainments.ShopingCenter.ShopingCenterDataModel;
 import com.example.belgorodtravelguide.R;
 
 import java.util.ArrayList;
 
-public class ParkAdapter extends RecyclerView.Adapter<ParkAdapter.ViewhHolder> {
+public class ShopingCenterAdapter extends RecyclerView.Adapter<ShopingCenterAdapter.ViewhHolder> {
 
 
-    ArrayList<ParkDataModel> dataholder;
+    ArrayList<ShopingCenterDataModel> dataholder;
     private  Context context;
 
-    public ParkAdapter(ArrayList<ParkDataModel> dataholder, Context context) {
+    public ShopingCenterAdapter(ArrayList<ShopingCenterDataModel> dataholder, Context context) {
         this.dataholder = dataholder;
         this.context=context;
     }

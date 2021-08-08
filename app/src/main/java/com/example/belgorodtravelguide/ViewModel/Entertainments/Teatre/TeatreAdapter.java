@@ -1,4 +1,4 @@
-package com.example.belgorodtravelguide.Model.Entertainments.Teatre;
+package com.example.belgorodtravelguide.ViewModel.Entertainments.Teatre;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.belgorodtravelguide.Model.Entertainments.Teatre.TeatreDataModel;
 import com.example.belgorodtravelguide.R;
 
 import java.util.ArrayList;

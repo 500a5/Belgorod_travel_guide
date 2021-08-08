@@ -4,14 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
 
-import com.example.belgorodtravelguide.Model.Entertainments.Move.MoveAdapter;
+import com.example.belgorodtravelguide.ViewModel.Entertainments.Move.MoveAdapter;
 import com.example.belgorodtravelguide.Model.Entertainments.Move.MoveDataModel;
-import com.example.belgorodtravelguide.Model.News.NewsAdapter;
-import com.example.belgorodtravelguide.Model.News.NewsDataModel;
 import com.example.belgorodtravelguide.R;
 
 import java.util.ArrayList;

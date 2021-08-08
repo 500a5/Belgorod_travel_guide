@@ -1,4 +1,4 @@
-package com.example.belgorodtravelguide.Model.Entertainments.Cafe;
+package com.example.belgorodtravelguide.ViewModel.Entertainments.Cafe;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.belgorodtravelguide.Model.Entertainments.Move.MoveDataModel;
+import com.example.belgorodtravelguide.Model.Entertainments.Cafe.CafeDataModel;
 import com.example.belgorodtravelguide.R;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.example.belgorodtravelguide.Model.Entertainments;
+package com.example.belgorodtravelguide.ViewModel.Entertainments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.belgorodtravelguide.Model.Entertainments.EntertainmentsDataModel;
 import com.example.belgorodtravelguide.R;
 import com.example.belgorodtravelguide.View.Entertainments.CafeActivity;
 import com.example.belgorodtravelguide.View.Entertainments.MoveActivity;

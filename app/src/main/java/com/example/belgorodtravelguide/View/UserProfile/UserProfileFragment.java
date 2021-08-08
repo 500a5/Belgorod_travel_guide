@@ -12,10 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.belgorodtravelguide.R;
 import com.example.belgorodtravelguide.View.Entertainments.MoveActivity;
+import com.example.belgorodtravelguide.View.MainActivity;
 
 
 public class UserProfileFragment extends Fragment {
@@ -36,6 +38,8 @@ public class UserProfileFragment extends Fragment {
         context = getActivity();
         View view =  inflater.inflate(R.layout.fragment_user_proile, container, false);
         ImageButton buttonvk,buttoninst;
+        TextView point = view.findViewById(R.id.point);
+        point.setText(Integer.toString(MainActivity.getpoint()));
         buttonvk = (ImageButton) view.findViewById(R.id.vk);
         buttoninst = (ImageButton) view.findViewById(R.id.inst);
         buttonvk.setOnClickListener(new View.OnClickListener() {

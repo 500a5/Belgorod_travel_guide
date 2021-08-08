@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import com.example.belgorodtravelguide.Model.News.NewsAdapter;
+import com.example.belgorodtravelguide.ViewModel.News.NewsAdapter;
 import com.example.belgorodtravelguide.Model.News.NewsDataModel;
 import com.example.belgorodtravelguide.R;
 

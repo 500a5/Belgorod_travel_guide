@@ -6,10 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.belgorodtravelguide.Model.Entertainments.Cafe.CafeAdapter;
+import com.example.belgorodtravelguide.ViewModel.Entertainments.Cafe.CafeAdapter;
 import com.example.belgorodtravelguide.Model.Entertainments.Cafe.CafeDataModel;
-import com.example.belgorodtravelguide.Model.Entertainments.Move.MoveAdapter;
-import com.example.belgorodtravelguide.Model.Entertainments.Move.MoveDataModel;
 import com.example.belgorodtravelguide.R;
 
 import java.util.ArrayList;

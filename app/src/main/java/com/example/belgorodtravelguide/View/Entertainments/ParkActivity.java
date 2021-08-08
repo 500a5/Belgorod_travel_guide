@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.belgorodtravelguide.Model.Entertainments.Move.MoveAdapter;
-import com.example.belgorodtravelguide.Model.Entertainments.Move.MoveDataModel;
-import com.example.belgorodtravelguide.Model.Entertainments.Park.ParkAdapter;
+import com.example.belgorodtravelguide.ViewModel.Entertainments.Park.ParkAdapter;
 import com.example.belgorodtravelguide.Model.Entertainments.Park.ParkDataModel;
 import com.example.belgorodtravelguide.R;
 
