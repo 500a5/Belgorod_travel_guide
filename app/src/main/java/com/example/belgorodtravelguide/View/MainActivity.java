@@ -55,9 +55,6 @@ public class MainActivity extends AppCompatActivity {
             editor.putInt(APP_PREFERENCES,points).apply();
     }
 
-    public void summpoint(){
-        points+=100;
-    }
     public static int getpoint(){
         return points;
     }

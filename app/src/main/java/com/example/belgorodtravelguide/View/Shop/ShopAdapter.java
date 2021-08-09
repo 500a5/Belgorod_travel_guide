@@ -1,4 +1,4 @@
-package com.example.belgorodtravelguide.ViewModel.Shop;
+package com.example.belgorodtravelguide.View.Shop;
 
 import android.content.Context;
 import android.util.Log;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.belgorodtravelguide.Model.Shop.ShopDataModel;
@@ -24,9 +26,13 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewhHolder> {
 
     ArrayList<ShopDataModel> dataholder;
     private  Context context;
-    public ShopAdapter(ArrayList<ShopDataModel> dataholder, Context context) {
+    private InterfaceShop.ViewModelShop viewModelShop;
+    ShopSportFragment shopSportFragment;
+    public ShopAdapter(ArrayList<ShopDataModel> dataholder, Context context, InterfaceShop.ViewModelShop viewModelShop, ShopSportFragment shopSportFragment) {
         this.dataholder = dataholder;
         this.context=context;
+        this.viewModelShop=viewModelShop;
+        this.shopSportFragment=shopSportFragment;
     }
 
     @NonNull
@@ -42,6 +48,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewhHolder> {
     public void onBindViewHolder(@NonNull ViewhHolder holder, int position) {
         holder.img.setImageResource(dataholder.get(position).getImage());
         holder.body.setText(dataholder.get(position).getBody());
+        holder.prise.setText(Integer.toString(dataholder.get(position).getPrise()));
     }
 
 
@@ -67,18 +74,14 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewhHolder> {
             itemView.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int pos = getAdapterPosition();  // check if item still exists
-                    if(pos != RecyclerView.NO_POSITION){
-                        ShopDataModel clickedDataItem = dataholder.get(pos);
-                        int prise = clickedDataItem.getPrise();
-                        if (prise<= MainActivity.getpoint()){
-                            MainActivity.setpoint(prise);
+                    int pos = getAdapterPosition();
+                    viewModelShop.buySpotrItem(pos, dataholder);
+                    shopSportFragment.onResume(); // не работает :\
 
-                        }
-                        Toast.makeText(view.getContext(), "You clicked " + clickedDataItem.getPrise(), Toast.LENGTH_SHORT).show();
-                    Log.d("deb", "ff" +pos+"fff" );
+                    ShopSportFragment fragment = new ShopSportFragment();
+                    FragmentTransaction transaction = shopSportFragment.getFragmentManager().beginTransaction();                     transaction.replace(R.id.fragmentContainerView, fragment);
+                    transaction.commit();
 
-                    }
                 }
             });
         }
