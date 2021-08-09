@@ -37,8 +37,7 @@ public class NewsFragment extends Fragment  {
         recyclerView = view.findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
 
-        Context context=getActivity();
-        recyclerView.setAdapter(new NewsAdapter(viewModelNews.newItemRecyclerView (), context, viewModelNews));
+        recyclerView.setAdapter(new NewsAdapter(viewModelNews.newItemRecyclerView (), getActivity(), viewModelNews));
 
         return view;
     }

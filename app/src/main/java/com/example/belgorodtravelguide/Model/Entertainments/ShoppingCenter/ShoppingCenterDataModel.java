@@ -1,10 +1,10 @@
-package com.example.belgorodtravelguide.Model.Entertainments.Teatre;
+package com.example.belgorodtravelguide.Model.Entertainments.ShoppingCenter;
 
-public class TeatreDataModel {
+public class ShoppingCenterDataModel {
     int image;
     String header;
 
-    public TeatreDataModel(int image, String header) {
+    public ShoppingCenterDataModel(int image, String header) {
         this.image = image;
         this.header = header;
 

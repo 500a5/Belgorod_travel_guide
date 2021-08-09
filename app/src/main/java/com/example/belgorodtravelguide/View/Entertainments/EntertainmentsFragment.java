@@ -46,49 +46,19 @@ public class EntertainmentsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        List<Fragment> list = new ArrayList<>();
-        list.add(new PagerFragment1());
-        list.add(new PagerFragment2());
-        list.add(new PagerFragment3());
-
 
         View view =  inflater.inflate(R.layout.fragment_entertainments, container, false);
+
         pager = (ViewPager) view.findViewById(R.id.pager);
-        pagerAdapter = new SlidePaderAdapter(getChildFragmentManager(),list);
+        pagerAdapter = new SlidePaderAdapter(getChildFragmentManager(),viewModelEntertainments.newListFragment());
         pager.setAdapter(pagerAdapter);
 
-        final int[] currentPage = {0};
-        Timer timer;
-        final long DELAY_MS = 2000;//delay in milliseconds before task is to be executed
-        final long PERIOD_MS = 2000; // time in milliseconds between successive task executions.
-
-        /*After setting the adapter use the timer */
-        final Handler handler = new Handler();
-        final Runnable Update = new Runnable() {
-            public void run() {
-                if (currentPage[0] == list.size()) {
-                    currentPage[0] = 0;
-                }
-                pager.setCurrentItem(currentPage[0]++, true);
-            }
-        };
-
-        timer = new Timer(); // This will create a new Thread
-        timer.schedule(new TimerTask() { // task to be scheduled
-            @Override
-            public void run() {
-                handler.post(Update);
-            }
-        }, DELAY_MS, PERIOD_MS);
-
-
+        viewModelEntertainments.pagerTimer(pager);
 
         recyclerView = view.findViewById(R.id.rec);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
 
-        Context context=getActivity();
-        recyclerView.setAdapter(new EntertainmentsAdapter(viewModelEntertainments.newItemRecyclerView(), context));
-
+        recyclerView.setAdapter(new EntertainmentsAdapter(viewModelEntertainments.newItemRecyclerView(), getActivity(),viewModelEntertainments));
 
         return view;
     }

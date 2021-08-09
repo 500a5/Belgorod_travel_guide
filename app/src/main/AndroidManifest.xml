@@ -11,7 +11,7 @@
         android:theme="@style/Theme.BelgorodTravelGuide">
         <activity android:name=".View.Entertainments.EntertainmentsActivity.Teatre.TheaterActivity"></activity>
         <activity android:name=".View.Entertainments.EntertainmentsActivity.Park.ParkActivity" />
-        <activity android:name=".View.Entertainments.EntertainmentsActivity.ShopingCenter.ShoppingCenterActivity" />
+        <activity android:name=".View.Entertainments.EntertainmentsActivity.ShoppingCenter.ShoppingCenterActivity" />
         <activity android:name=".View.Entertainments.EntertainmentsActivity.Cafe.CafeActivity" />
         <activity android:name=".View.Entertainments.EntertainmentsActivity.Move.MoveActivity" />
         <activity android:name=".View.MainActivity">

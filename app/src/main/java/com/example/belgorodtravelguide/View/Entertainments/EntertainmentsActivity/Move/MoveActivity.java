@@ -9,31 +9,28 @@ import android.os.Bundle;
 import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Move.MoveAdapter;
 import com.example.belgorodtravelguide.Model.Entertainments.Move.MoveDataModel;
 import com.example.belgorodtravelguide.R;
+import com.example.belgorodtravelguide.ViewModel.Entertainments.Cafe.ViewModelCafe;
+import com.example.belgorodtravelguide.ViewModel.Entertainments.Move.ViewModelMove;
 
 import java.util.ArrayList;
 
 public class MoveActivity extends AppCompatActivity {
+
     RecyclerView recyclerView;
     ArrayList<MoveDataModel> dataholder;
+    private ViewModelMove viewModelMove;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_move);
+
+        viewModelMove = new ViewModelMove(this);
+
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
 
-        dataholder = new ArrayList<>();
-
-        MoveDataModel ob1 = new MoveDataModel(R.drawable.entertainments_movie_1, "Кинотеатр Победа");
-        dataholder.add(ob1);
-
-        MoveDataModel ob2 = new MoveDataModel(R.drawable.entertainments_movie_2, "Кинотеатр Русич");
-        dataholder.add(ob2);
-
-        MoveDataModel ob3 = new MoveDataModel(R.drawable.entertainments_movie_3, "Кинотеатр Радуга");
-        dataholder.add(ob3);
-
-        recyclerView.setAdapter(new MoveAdapter(dataholder, getParent()));
+        recyclerView.setAdapter(new MoveAdapter(viewModelMove.newItemRecyclerView(), getParent()));
 
     }
 

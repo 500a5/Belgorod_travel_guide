@@ -6,34 +6,27 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 
-import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Teatre.TeatreAdapter;
-import com.example.belgorodtravelguide.Model.Entertainments.Teatre.TeatreDataModel;
+import com.example.belgorodtravelguide.Model.Entertainments.Theater.TheaterDataModel;
 import com.example.belgorodtravelguide.R;
+import com.example.belgorodtravelguide.ViewModel.Entertainments.ShopingCentre.ViewModelShoppingCenter;
+import com.example.belgorodtravelguide.ViewModel.Entertainments.Teatre.ViewModelTheater;
 
 import java.util.ArrayList;
 
 public class TheaterActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ArrayList<TeatreDataModel> dataholder;
+    private ViewModelTheater viewModelTheater;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theater);
+
+        viewModelTheater = new ViewModelTheater(this);
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
 
-        dataholder = new ArrayList<>();
-
-        TeatreDataModel ob1 = new TeatreDataModel(R.drawable.entertainments_theatre_1, "Театр Кукол");
-        dataholder.add(ob1);
-
-
-        TeatreDataModel ob2 = new TeatreDataModel(R.drawable.entertainments_theatre_2, "Театр Им. Щепкина");
-        dataholder.add(ob2);
-
-
-        recyclerView.setAdapter(new TeatreAdapter(dataholder, getParent()));
+        recyclerView.setAdapter(new TheaterAdapter(viewModelTheater.newItemRecyclerView(), getParent()));
 
     }
 }

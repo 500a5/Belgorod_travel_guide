@@ -1,7 +1,6 @@
 package com.example.belgorodtravelguide.View.Entertainments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.belgorodtravelguide.Model.Entertainments.EntertainmentsDataModel;
 import com.example.belgorodtravelguide.R;
-import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Cafe.CafeActivity;
-import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Move.MoveActivity;
-import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Park.ParkActivity;
-import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.ShopingCenter.ShoppingCenterActivity;
-import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Teatre.TheaterActivity;
 
 import java.util.ArrayList;
 
@@ -26,10 +20,12 @@ public class EntertainmentsAdapter extends RecyclerView.Adapter<EntertainmentsAd
 
     ArrayList<EntertainmentsDataModel> dataholder;
     private  Context context;
+    private InterfaceEntertaiments.ViewModelEntertaiments viewModelEntertaiments;
 
-    public EntertainmentsAdapter(ArrayList<EntertainmentsDataModel> dataholder, Context context) {
+    public EntertainmentsAdapter(ArrayList<EntertainmentsDataModel> dataholder, Context context,InterfaceEntertaiments.ViewModelEntertaiments viewModelEntertaiments) {
         this.dataholder = dataholder;
         this.context=context;
+        this.viewModelEntertaiments=viewModelEntertaiments;
     }
 
     @NonNull
@@ -49,31 +45,7 @@ public class EntertainmentsAdapter extends RecyclerView.Adapter<EntertainmentsAd
        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent;
-                switch (position){
-                    case 0:
-                        intent = new Intent(context, MoveActivity.class);
-                        context.startActivity(intent);
-                        break;
-                    case 1:
-                        intent = new Intent(context, CafeActivity.class);
-                        context.startActivity(intent);
-                        break;
-                    case 2:
-                        intent = new Intent(context, ShoppingCenterActivity.class);
-                        context.startActivity(intent);
-                        break;
-                    case 3:
-                        intent = new Intent(context, ParkActivity.class);
-                        context.startActivity(intent);
-                        break;
-                    case 4:
-                        intent = new Intent(context, TheaterActivity.class);
-                        context.startActivity(intent);
-                        break;
-
-                }
-
+                viewModelEntertaiments.gooNewActivity(context,position);
             }
 
         });
@@ -93,7 +65,6 @@ public class EntertainmentsAdapter extends RecyclerView.Adapter<EntertainmentsAd
             super(itemView);
             img=itemView.findViewById(R.id.img1);
             header=itemView.findViewById(R.id.t1);
-
         }
     }
 

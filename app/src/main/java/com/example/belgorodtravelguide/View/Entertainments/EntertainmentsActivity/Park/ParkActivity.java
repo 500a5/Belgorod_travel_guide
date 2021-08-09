@@ -9,33 +9,28 @@ import android.os.Bundle;
 import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Park.ParkAdapter;
 import com.example.belgorodtravelguide.Model.Entertainments.Park.ParkDataModel;
 import com.example.belgorodtravelguide.R;
+import com.example.belgorodtravelguide.ViewModel.Entertainments.Move.ViewModelMove;
+import com.example.belgorodtravelguide.ViewModel.Entertainments.Park.ViewModelPark;
 
 import java.util.ArrayList;
 
 public class ParkActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ArrayList<ParkDataModel> dataholder;
+    private ViewModelPark viewModelPark;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_park);
+
+        viewModelPark = new ViewModelPark(this);
+
         recyclerView = findViewById(R.id.recyclerview);
+
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
 
-        dataholder = new ArrayList<>();
-
-        ParkDataModel ob1 = new ParkDataModel(R.drawable.entertainments_park_1, "Парк Ленина");
-        dataholder.add(ob1);
-
-        ParkDataModel ob2 = new ParkDataModel(R.drawable.entertainments_park_2, "Парк Дружбы");
-        dataholder.add(ob2);
-
-
-        ParkDataModel ob3 = new ParkDataModel(R.drawable.entertainments_park_3, "Парк Победы");
-        dataholder.add(ob3);
-
-        recyclerView.setAdapter(new ParkAdapter(dataholder, getParent()));
+        recyclerView.setAdapter(new ParkAdapter(viewModelPark.newItemRecyclerView(), getParent()));
 
     }
 
