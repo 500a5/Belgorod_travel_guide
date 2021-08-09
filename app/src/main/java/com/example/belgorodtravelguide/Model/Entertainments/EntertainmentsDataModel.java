@@ -2,7 +2,7 @@ package com.example.belgorodtravelguide.Model.Entertainments;
 
 public class EntertainmentsDataModel {
     int image;
-    String header, body;
+    String header;
 
     public EntertainmentsDataModel(int image, String header) {
         this.image = image;

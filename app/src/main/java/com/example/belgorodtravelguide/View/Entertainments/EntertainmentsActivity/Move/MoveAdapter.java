@@ -1,4 +1,4 @@
-package com.example.belgorodtravelguide.ViewModel.Entertainments.Move;
+package com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Move;
 
 import android.content.Context;
 import android.view.LayoutInflater;

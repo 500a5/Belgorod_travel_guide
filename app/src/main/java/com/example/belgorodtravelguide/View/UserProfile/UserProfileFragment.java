@@ -10,13 +10,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.belgorodtravelguide.R;
-import com.example.belgorodtravelguide.View.Entertainments.MoveActivity;
 import com.example.belgorodtravelguide.View.MainActivity;
 
 

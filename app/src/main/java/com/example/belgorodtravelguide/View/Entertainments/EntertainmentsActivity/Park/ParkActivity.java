@@ -1,12 +1,12 @@
-package com.example.belgorodtravelguide.View.Entertainments;
+package com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Park;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 
-import com.example.belgorodtravelguide.ViewModel.Entertainments.Park.ParkAdapter;
+import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Park.ParkAdapter;
 import com.example.belgorodtravelguide.Model.Entertainments.Park.ParkDataModel;
 import com.example.belgorodtravelguide.R;
 
@@ -21,7 +21,7 @@ public class ParkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_park);
         recyclerView = findViewById(R.id.recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getParent()));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
 
         dataholder = new ArrayList<>();
 

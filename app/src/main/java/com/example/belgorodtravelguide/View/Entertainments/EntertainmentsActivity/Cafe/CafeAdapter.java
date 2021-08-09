@@ -1,4 +1,4 @@
-package com.example.belgorodtravelguide.ViewModel.Entertainments.Park;
+package com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Cafe;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,18 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.belgorodtravelguide.Model.Entertainments.Park.ParkDataModel;
+import com.example.belgorodtravelguide.Model.Entertainments.Cafe.CafeDataModel;
 import com.example.belgorodtravelguide.R;
 
 import java.util.ArrayList;
 
-public class ParkAdapter extends RecyclerView.Adapter<ParkAdapter.ViewhHolder> {
+public class CafeAdapter extends RecyclerView.Adapter<CafeAdapter.ViewhHolder> {
 
 
-    ArrayList<ParkDataModel> dataholder;
+    ArrayList<CafeDataModel> dataholder;
     private  Context context;
 
-    public ParkAdapter(ArrayList<ParkDataModel> dataholder, Context context) {
+    public CafeAdapter(ArrayList<CafeDataModel> dataholder, Context context) {
         this.dataholder = dataholder;
         this.context=context;
     }

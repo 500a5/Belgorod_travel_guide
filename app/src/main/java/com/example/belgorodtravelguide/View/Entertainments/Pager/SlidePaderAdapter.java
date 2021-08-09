@@ -1,13 +1,9 @@
-package com.example.belgorodtravelguide.ViewModel.Entertainments;
+package com.example.belgorodtravelguide.View.Entertainments.Pager;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-
-import com.example.belgorodtravelguide.View.Entertainments.PagerFragment1;
-import com.example.belgorodtravelguide.View.Entertainments.PagerFragment2;
-import com.example.belgorodtravelguide.View.Entertainments.PagerFragment3;
 
 import java.util.List;
 

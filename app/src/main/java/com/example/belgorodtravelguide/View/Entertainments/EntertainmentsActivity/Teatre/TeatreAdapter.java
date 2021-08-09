@@ -1,8 +1,6 @@
-package com.example.belgorodtravelguide.ViewModel.News;
+package com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Teatre;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.belgorodtravelguide.Model.News.NewsDataModel;
+import com.example.belgorodtravelguide.Model.Entertainments.Teatre.TeatreDataModel;
 import com.example.belgorodtravelguide.R;
 
 import java.util.ArrayList;
 
-public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewhHolder> {
+public class TeatreAdapter extends RecyclerView.Adapter<TeatreAdapter.ViewhHolder> {
 
 
-    ArrayList<NewsDataModel> dataholder;
+    ArrayList<TeatreDataModel> dataholder;
     private  Context context;
 
-    public NewsAdapter(ArrayList<NewsDataModel> dataholder, Context context) {
+    public TeatreAdapter(ArrayList<TeatreDataModel> dataholder, Context context) {
         this.dataholder = dataholder;
         this.context=context;
     }
@@ -32,7 +30,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewhHolder> {
 
     @Override
     public ViewhHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.news_item,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.object_entertainments_item,parent,false);
         return new ViewhHolder(view);
     }
 
@@ -41,7 +39,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewhHolder> {
     public void onBindViewHolder(@NonNull ViewhHolder holder, int position) {
         holder.img.setImageResource(dataholder.get(position).getImage());
         holder.header.setText(dataholder.get(position).getHeader());
-        holder.body.setText(dataholder.get(position).getBody());
+
     }
 
 
@@ -52,22 +50,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewhHolder> {
 
     class ViewhHolder extends RecyclerView.ViewHolder{
         ImageView img;
-        TextView header, body;
+        TextView header;
         public ViewhHolder(@NonNull View itemView) {
             super(itemView);
             img=itemView.findViewById(R.id.img1);
             header=itemView.findViewById(R.id.t1);
-            body=itemView.findViewById(R.id.t2);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Uri address = Uri.parse("https://www.google.ru/");
-                    Intent intent = new Intent(Intent.ACTION_VIEW, address);
-                    context.startActivity(intent);
-                }
-
-            });
         }
     }
 

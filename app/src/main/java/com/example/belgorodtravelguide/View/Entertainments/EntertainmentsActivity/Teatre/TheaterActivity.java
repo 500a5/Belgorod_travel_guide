@@ -1,12 +1,12 @@
-package com.example.belgorodtravelguide.View.Entertainments;
+package com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Teatre;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 
-import com.example.belgorodtravelguide.ViewModel.Entertainments.Teatre.TeatreAdapter;
+import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Teatre.TeatreAdapter;
 import com.example.belgorodtravelguide.Model.Entertainments.Teatre.TeatreDataModel;
 import com.example.belgorodtravelguide.R;
 
@@ -21,7 +21,7 @@ public class TheaterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theater);
         recyclerView = findViewById(R.id.recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getParent()));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
 
         dataholder = new ArrayList<>();
 

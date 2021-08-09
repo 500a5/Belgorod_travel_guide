@@ -1,4 +1,4 @@
-package com.example.belgorodtravelguide.ViewModel.Entertainments;
+package com.example.belgorodtravelguide.View.Entertainments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.belgorodtravelguide.Model.Entertainments.EntertainmentsDataModel;
 import com.example.belgorodtravelguide.R;
-import com.example.belgorodtravelguide.View.Entertainments.CafeActivity;
-import com.example.belgorodtravelguide.View.Entertainments.MoveActivity;
-import com.example.belgorodtravelguide.View.Entertainments.ParkActivity;
-import com.example.belgorodtravelguide.View.Entertainments.ShoppingCenterActivity;
-import com.example.belgorodtravelguide.View.Entertainments.TheaterActivity;
+import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Cafe.CafeActivity;
+import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Move.MoveActivity;
+import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Park.ParkActivity;
+import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.ShopingCenter.ShoppingCenterActivity;
+import com.example.belgorodtravelguide.View.Entertainments.EntertainmentsActivity.Teatre.TheaterActivity;
 
 import java.util.ArrayList;
 
