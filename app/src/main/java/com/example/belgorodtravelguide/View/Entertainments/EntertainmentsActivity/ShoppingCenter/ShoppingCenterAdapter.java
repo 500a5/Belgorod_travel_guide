@@ -8,10 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.belgorodtravelguide.Model.Entertainments.ShoppingCenter.ShoppingCenterDataModel;
 import com.example.belgorodtravelguide.R;
+import com.example.belgorodtravelguide.databinding.ObjectEntertainmentsItemBinding;
 
 import java.util.ArrayList;
 
@@ -30,8 +32,9 @@ public class ShoppingCenterAdapter extends RecyclerView.Adapter<ShoppingCenterAd
 
     @Override
     public ViewhHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.object_entertainments_item,parent,false);
-        return new ViewhHolder(view);
+        ObjectEntertainmentsItemBinding binding =  DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.object_entertainments_item, parent, false);
+        View view = binding.getRoot();
+        return new ViewhHolder(view,binding);
     }
 
 
@@ -51,10 +54,10 @@ public class ShoppingCenterAdapter extends RecyclerView.Adapter<ShoppingCenterAd
     class ViewhHolder extends RecyclerView.ViewHolder{
         ImageView img;
         TextView header;
-        public ViewhHolder(@NonNull View itemView) {
+        public ViewhHolder(@NonNull View itemView, ObjectEntertainmentsItemBinding binding) {
             super(itemView);
-            img=itemView.findViewById(R.id.img1);
-            header=itemView.findViewById(R.id.t1);
+            img=binding.img1;
+            header=binding.t1;
 
         }
     }

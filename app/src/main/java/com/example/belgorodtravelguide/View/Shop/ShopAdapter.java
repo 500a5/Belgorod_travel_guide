@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +19,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.belgorodtravelguide.Model.Shop.ShopDataModel;
 import com.example.belgorodtravelguide.R;
 import com.example.belgorodtravelguide.View.MainActivity;
+import com.example.belgorodtravelguide.databinding.FragmentShopSportBinding;
+import com.example.belgorodtravelguide.databinding.NewsItemBinding;
+import com.example.belgorodtravelguide.databinding.ShopSportItemBinding;
 
 import java.util.ArrayList;
 
@@ -39,8 +43,10 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewhHolder> {
 
     @Override
     public ViewhHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.shop_sport_item,parent,false);
-        return new ViewhHolder(view);
+        FragmentShopSportBinding binding_shop =  DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.fragment_shop_sport, parent, false);
+        ShopSportItemBinding binding=  DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.shop_sport_item, parent, false);
+        View view = binding.getRoot();
+        return new ViewhHolder(view, binding,binding_shop);
     }
 
 
@@ -61,17 +67,17 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewhHolder> {
         ImageView img;
         TextView prise, body;
         Button button, pointbutton;
-        public ViewhHolder(@NonNull View itemView) {
+        public ViewhHolder(@NonNull View itemView, ShopSportItemBinding binding,FragmentShopSportBinding binding_shop) {
             super(itemView);
-            img=itemView.findViewById(R.id.img1);
-            prise=itemView.findViewById(R.id.t1);
-            body=itemView.findViewById(R.id.t2);
-            button=itemView.findViewById(R.id.button);
+            img=binding.img1;
+            prise=binding.t1;
+            body=binding.t2;
+            button=binding.button;
 
-            pointbutton = itemView.findViewById(R.id.summpoint);
+            pointbutton = binding_shop.summpoint;
 
 
-            itemView.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            binding.button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int pos = getAdapterPosition();

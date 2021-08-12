@@ -3,6 +3,7 @@ package com.example.belgorodtravelguide.View.Shop;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -18,6 +19,8 @@ import com.example.belgorodtravelguide.R;
 import com.example.belgorodtravelguide.View.MainActivity;
 import com.example.belgorodtravelguide.ViewModel.News.ViewModelNews;
 import com.example.belgorodtravelguide.ViewModel.Shop.ViewModelShop;
+import com.example.belgorodtravelguide.databinding.FragmentNewsBinding;
+import com.example.belgorodtravelguide.databinding.FragmentShopSportBinding;
 
 import java.util.ArrayList;
 
@@ -39,13 +42,15 @@ public class ShopSportFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view =  inflater.inflate(R.layout.fragment_shop_sport, container, false);
+        FragmentShopSportBinding binding =  DataBindingUtil.inflate(inflater, R.layout.fragment_shop_sport, container, false);
+        View view = binding.getRoot();
 
-        point = view.findViewById(R.id.point);
+
+        point = binding.point;
         point.setText(Integer.toString(MainActivity.getpoint()));
 
 
-        view.findViewById(R.id.summpoint).setOnClickListener(new View.OnClickListener() {
+        binding.summpoint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MainActivity.sumpoint();
@@ -57,7 +62,7 @@ public class ShopSportFragment extends Fragment {
 
 
 
-        recyclerView = view.findViewById(R.id.recyclerview);
+        recyclerView = binding.recyclerview;
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setAdapter(new ShopAdapter(viewModelShop.newItemRecyclerView(), getActivity(),viewModelShop,this));
 

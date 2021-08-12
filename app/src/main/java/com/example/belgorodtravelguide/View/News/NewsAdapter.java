@@ -8,10 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.belgorodtravelguide.Model.News.NewsDataModel;
 import com.example.belgorodtravelguide.R;
+import com.example.belgorodtravelguide.databinding.FragmentNewsBinding;
+import com.example.belgorodtravelguide.databinding.NewsItemBinding;
 
 import java.util.ArrayList;
 
@@ -32,8 +35,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewhHolder>  
 
     @Override
     public ViewhHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.news_item,parent,false);
-        return new ViewhHolder(view);
+        NewsItemBinding binding=  DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.news_item, parent, false);
+        View view = binding.getRoot();
+        return new ViewhHolder(view, binding);
     }
 
 
@@ -53,11 +57,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewhHolder>  
     class ViewhHolder extends RecyclerView.ViewHolder{
         ImageView img;
         TextView header, body;
-        public ViewhHolder(@NonNull View itemView) {
+        public ViewhHolder(@NonNull View itemView ,NewsItemBinding binding) {
             super(itemView);
-            img=itemView.findViewById(R.id.img1);
-            header=itemView.findViewById(R.id.t1);
-            body=itemView.findViewById(R.id.t2);
+            img=binding.img1;
+            header=binding.t1;
+            body=binding.t2;
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

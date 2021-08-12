@@ -1,6 +1,7 @@
 package com.example.belgorodtravelguide.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.belgorodtravelguide.R;
 import com.example.belgorodtravelguide.View.Shop.ShopSportFragment;
+import com.example.belgorodtravelguide.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
@@ -26,10 +28,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
+
+
+        BottomNavigationView bottomNavigationView = activityMainBinding.bottomNavigationView;
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
+
         NavController navController = navHostFragment.getNavController();
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
